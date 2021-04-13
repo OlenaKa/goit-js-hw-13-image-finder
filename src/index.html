@@ -4,25 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    /> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <title>Homework 13</title>
   </head>
   <body>
     <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="query"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
+      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+      <button type="submit" class="search-button">Search</button>
     </form>
-    <button type="button" class="search">Search</button>
 
-    <div class="my-gallery"></div>
+    <ul class="my-gallery"></ul>
 
-    <button type="button" class="show-more">Show more</button>
+    <div class="loader-ellips is-hidden">
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+    </div>
+    <div class="end-of-search is-hidden">You just saw everything we found</div>
   </body>
 </html>
