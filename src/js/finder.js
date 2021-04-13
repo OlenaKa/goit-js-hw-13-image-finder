@@ -1,9 +1,11 @@
 
 import PicturesApiService from './apiService';
 import galleryItemTemplate from '../templates/gallery-item.hbs';
+import { addBackToTop } from 'vanilla-back-to-top';
 const basicLightbox = require('basiclightbox');
 const { error } = require('@pnotify/core');
 const { defaults } = require('@pnotify/core');
+
 
 const searchApiService = new PicturesApiService();
 let observer = new IntersectionObserver((entries)=>{
@@ -68,6 +70,7 @@ function onFetchResults (items) {
     refs.endOfSearch.classList.remove('is-hidden')
   } 
   else if (items === undefined && searchResults === 0) {
+    refs.scrollFlag.classList.add('is-hidden')
     return showErrorAlert();
   }
   else if (items.length === 12) {
@@ -88,7 +91,6 @@ function onFetchResults (items) {
 
 async function searchPictures () {
   const items = await fetchPictures();
-    console.log(items);
     onFetchResults(items);
 }
 
@@ -121,4 +123,4 @@ function onGalleryClick (e) {
 
 }
 
-
+addBackToTop({backgroundColor: '#70cceb'});
